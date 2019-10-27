@@ -7,6 +7,11 @@ Anzeigen der Docker Images
 docker image ls
 ```
 
+Container bauen
+```
+docker build . -t [container-name] --no-cache
+```
+
 Container starten
 ```docker
 docker run -it --workdir "/some/remote/dir" --rm --name [image-name] -v "[$HOME/local/file]:[/remote/file]" -v "[/local/dir]:[/remote/dir]" [container-name] /bin/bash
