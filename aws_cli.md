@@ -15,5 +15,11 @@ aws lex-models get-bots
 
 ## Serverless
 ```
+serverless create -t awsnodejs
 serverless deploy --stage production
+```
+### local
+```
+sls dynamodb install
+sls dynamodb start --migrate --stage test
 ```
