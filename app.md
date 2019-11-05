@@ -28,13 +28,24 @@ npm i --save uuid
 serverless dynamodb install
 serverless dynamodb start --migrate
 ```
+### aws rds
+```
+aws rds create-db-instance \
+    --allocated-storage 20 --db-instance-class db.m3.medium \
+    --db-instance-identifier [dbname] \
+    --engine mysql \
+    --master-username [user] \
+    --master-user-password [password] \
+    --vpc-security-group-ids [group-id] \
+    --publicly-accessible
+
+aws rds describe-db-instances
+
+aws rds delete-db-instance --db-instance-identifier [dbname] --skip-final-snapshot
+```
 ### mysql
 ```
 docker pull mysql
-docker run --rm --name mysql-mln1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql
-docker exec -it mysql-mln1 bin/bash
-mysql -u [user] -p[password] -h [rds-endpoint]
-
-
 docker run -it --rm --name mysql-mln1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -v "$HOME/:/home/" mysql bin/bash
+mysql -u [user] -p[password] -h [some-db].rds.amazonaws.com
 ```
