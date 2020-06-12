@@ -3,6 +3,8 @@
 [docker doc](https://docs.docker.com/engine/reference/commandline/)
 
 ```docker
+sudo systemctl start docker
+
 # MySQL docker image downloaden
 docker pull mysql   
             

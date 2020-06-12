@@ -15,11 +15,9 @@ aws lex-models get-bots
 
 ## Serverless
 ```
+docker build . -t aws-sls --no-cache
+docker run -it --workdir "/home/mln" --rm --name aws-sls -p 8000:8000 -v "$HOME/.aws/:/root/.aws/" -v "$HOME:/home/mln" aws-sls /bin/bash
+
 serverless create -t awsnodejs
 serverless deploy --stage production
-```
-### local
-```
-sls dynamodb install
-sls dynamodb start --migrate --stage test
 ```

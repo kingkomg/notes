@@ -1,32 +1,28 @@
-# Frontend App
-## install
-```
-npm i aws-amplify
-npm i aws-amplify-react
-```
-## initialize
-```
-npx create-react-app my-amplify-app --typescript
-amplify init
-amplify add auth
-amplify push
-amplify add hosting
-amplify publish
-```
-
 # Backend Lambda
-## install
+## init
 ```
-npm i --save jest
-npm i --save chai
-npm i --save aws-sdk
-npm i --save serverless-dynamodb-local
+serverless create -t aws-nodejs --name [name]
+
+serverless-appsync-plugin
 npm i --save uuid
+npm i --save-dev jest
+npm i --save-dev chai
+npm i --save-dev aws-sdk
+npm i --save-dev serverless-dynamodb-local
+
+serverless deploy --stage production
 ```
 ## local dynamodb
 ```
 serverless dynamodb install
 serverless dynamodb start --migrate
+
+*** jest ohne aws credentials im projekt ***
+DynamoDB creation params
+    region: 'localhost',
+    endpoint: 'http://localhost:8000',
+    accessKeyId: 'DEFAULT_ACCESS_KEY',
+    secretAccessKey: 'DEFAULT_SECRET'
 ```
 ### aws rds
 ```
