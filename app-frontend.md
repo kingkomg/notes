@@ -1,12 +1,10 @@
 # Frontend App
-## install
-```
+
+``` 
 npm i aws-amplify
 npm i aws-amplify-react
-```
-## initialize
-```
-npx create-react-app my-amplify-app --typescript
+
+npx create-react-app my-app --template typescript
 amplify init
 amplify add auth
 amplify push

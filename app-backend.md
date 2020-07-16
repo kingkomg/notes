@@ -55,3 +55,15 @@ An error occurred: ApiGatewayRestApi - User: arn:aws:iam::187917125870:user/wish
 
 An error occurred: IamRoleLambdaExecution - API: iam:CreateRole User: arn:aws:iam::187917125870:user/wishy-dev is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::187917125870:role/serverless-example-dev-us-east-1-lambdaRole.
 ```
+
+### websockets troubleshooting
+```
+npm i -g wscat
+wscat -c 
+
+#find blocking application
+lsof -i :15001
+
+export SLS_DEBUG=*
+
+```

@@ -12,3 +12,4 @@ RUN yum install -y java-1.8.0-openjdk-headless.x86_64
 RUN yum install -y maven
 RUN yum install -y git
 RUN npm i -g serverless --unsafe-perm
+RUN npm i -g wscat

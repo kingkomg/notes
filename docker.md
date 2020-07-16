@@ -17,6 +17,8 @@ docker build . -t [container-name] --no-cache
 # Container ausführen|verbinden
 docker run --rm --name mysql-mln1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql
 docker exec -it mysql-mln1 bin/bash
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
 ```
 
 ### bsp
